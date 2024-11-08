@@ -45,15 +45,20 @@ formElem.addEventListener("submit", function (event) {
         typeOffer = "Biglietto Standard";
     }
     const resultPrice = priceStandard - discount;
-
-    ticketFinalPriceElem.innerHTML = `${resultPrice.toFixed(2)} €`;
     ticketNameElem.innerHTML = username;
+    ticketFinalPriceElem.innerHTML = `${resultPrice.toFixed(2)} €`;
     ticketTypeElem.innerHTML = typeOffer;
-});
 
 
 // CALCOLO DEL NUMERO RANDOM DELLA CARROZZA
 
+const numRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const resultRandom = numRandom(1,5);
+
+
+ticketPlaceElem.innerHTML =  ` N. ${resultRandom}`;
+
+
 // CALCOLO DEL CODICE  RANDOM BIGLIETTO
 
-
+});
