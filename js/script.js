@@ -10,6 +10,7 @@ const kmElem = document.getElementById("km");
 const ageElem = document.getElementById("age");
 
 // ELEMENTI TICKET
+const sectionOutput = document.getElementById("section-output");
 const ticketNameElem = document.getElementById("ticket-name-complete");
 const ticketTypeElem = document.getElementById("ticket-type");
 const ticketPlaceElem = document.getElementById("ticket-place");
@@ -17,9 +18,13 @@ const ticketCodeElem = document.getElementById("ticket-code");
 const ticketFinalPriceElem = document.getElementById("ticket-final-price");
 
 
+
+//  EVENTI AL CLICK DEL BOTTENE GENERA
 formElem.addEventListener("submit", function (event) {
     console.log(event);
     event.preventDefault();
+
+ sectionOutput.classList.remove("d-none");
 
     //  PRELEVO VALORE DEGLI ELEMENTI IMPUT
     const username = nameCompleteElem.value.trim();
@@ -59,6 +64,14 @@ const resultRandom = numRandom(1,5);
 ticketPlaceElem.innerHTML =  ` N. ${resultRandom}`;
 
 
-// CALCOLO DEL CODICE  RANDOM BIGLIETTO
+// CALCOLO DEL CODICE RANDOM BIGLIETTO
 
+
+});
+
+//  EVENTI AL CLICK DEL BOTTENE ANNULLA
+formElem.addEventListener("reset", function (event) {
+    console.log(event);
+    event.preventDefault();
+    sectionOutput.classList.add("d-none");
 });
